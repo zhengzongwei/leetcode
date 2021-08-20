@@ -19,7 +19,7 @@ class Solution{
             } else if(count >= 1) {
                 continue;
             } else {
-                nums[++left] = nums[right]
+                nums[++left] = nums[right];
                 count++;
             }
         }
