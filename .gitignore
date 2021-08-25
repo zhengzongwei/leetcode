@@ -45,3 +45,4 @@ dist/
 package-lock
 .groovy
 test/
+out/
