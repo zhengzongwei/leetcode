@@ -1,11 +1,14 @@
 class Solution {
     public int canCompleteCircuit(int[] gas, int[] cost) {
+        // PLAN 1
         for (int i = 0; i < gas.length; i++) {
             // 计算合适的出发节点
             if (gas[i] >= cost[i] && go(gas, cost, gas[i] - cost[i], i + 1, i)) {
                 return i;
             }
         }
+
+        // PLAN 2
         return -1;
     }
 
