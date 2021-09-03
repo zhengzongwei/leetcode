@@ -16,3 +16,12 @@ class Solution {
         return jump;
     }
 }
+
+class Solution2 {
+    // 动态规划 (dynamic programming)
+    public int jump(int[] nums) {
+        int len = nums.length;
+
+        return 0;
+    }
+}
