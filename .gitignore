@@ -46,3 +46,4 @@ package-lock
 .groovy
 test/
 out/
+commit.sh
