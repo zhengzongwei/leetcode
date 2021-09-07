@@ -15,3 +15,10 @@ class Solution {
         return false;
     }
 }
+
+class Solution2 {
+    // 桶排序
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        return false;
+    }
+}
