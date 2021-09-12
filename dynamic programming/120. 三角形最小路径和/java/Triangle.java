@@ -23,3 +23,31 @@ class Solution {
         return count;
     }
 }
+
+class Solution2 {
+    // 动态规划
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int len = triangle.size();
+        int[][] dp = new int[len][len];
+
+        dp[0][0] = triangle.get(0).get(0);
+        for (int i = 1; i < len; i++) {
+            List<Integer> rows = triangle.get(i);
+            dp[i][0] = dp[i - 1][0] + rows.get(0);
+            for (int j = 1; j < rows.size(); j++) {
+                if (j == rows.size() - 1) {
+                    dp[i][j] = dp[i - 1][j - 1] + rows.get(j);
+                } else {
+                    dp[i][j] = Math.min(dp[i - 1][j - 1] + rows.get(j), dp[i - 1][j] + rows.get(j));
+                }
+            }
+        }
+
+        int count = dp[len - 1][0];
+        for (int z = 1; z < len; z++) {
+            count = Math.min(count, dp[len - 1][z]);
+        }
+
+        return count;
+    }
+}
