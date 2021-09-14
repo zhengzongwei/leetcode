@@ -19,7 +19,6 @@ class Solution {
      */
     public int numSquares(int n) {
         int[] dp = new int[n + 1];
-        dp[0] = 0;
         dp[1] = 1;
         for (int i = 2; i <= n; i++) {
             dp[i] = Integer.MAX_VALUE;
@@ -30,6 +29,21 @@ class Solution {
                 }
                 dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
             }
+        }
+        return dp[n];
+    }
+}
+
+class Solution2 {
+    public int numSquares(int n) {
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            int min = Integer.MAX_VALUE;
+            for (int j = 1; j * j <= i; j++) {
+                min = Math.min(min, dp[i - j * j]);
+            }
+            dp[i] = min + 1;
         }
         return dp[n];
     }
