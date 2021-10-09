@@ -22,24 +22,24 @@ class Solution {
 class Solution2 {
     // 时间复杂度 O(3n)
     public int maxProfit(int[] prices) {
-        int size = prices.length;
-        int[] l_dp = new int[size];
-        int[] r_dp = new int[size];
+        int len = prices.length;
+        int[] l_dp = new int[len];
+        int[] r_dp = new int[len];
 
         int min = prices[0];
-        for (int l = 1; l < size; l++) {
+        for (int l = 1; l < len; l++) {
             min = Math.min(min, prices[l]);
             l_dp[l] = Math.max(l_dp[l - 1], prices[l] - min);
         }
 
-        int max = prices[prices.length - 1];
-        for (int r = prices.length - 2; r >= 0; r--) {
+        int max = prices[len - 1];
+        for (int r = len - 2; r >= 0; r--) {
             max = Math.max(max, prices[r]);
             r_dp[r] = Math.max(r_dp[r + 1], max - prices[r]);
         }
 
         int sum = 0;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < len; i++) {
             sum = Math.max(sum, l_dp[i] + r_dp[i]);
         }
 
