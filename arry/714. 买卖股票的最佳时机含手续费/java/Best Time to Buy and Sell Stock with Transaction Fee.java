@@ -12,3 +12,9 @@ class Solution {
         return dp[len - 1][0];
     }
 }
+
+class Solution2 {
+    // 贪心算法
+    public int maxProfit(int[] prices, int fee) {
+    }
+}
