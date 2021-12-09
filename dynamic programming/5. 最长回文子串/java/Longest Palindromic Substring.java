@@ -1,5 +1,5 @@
 class Solution {
-    // 动态规划，还存在优化的空间
+    // 暴力破解
     public String longestPalindrome(String s) {
         int len = s.length();
         String[] dp = new String[len];
@@ -30,5 +30,11 @@ class Solution {
             }
         }
         return true;
+    }
+}
+
+class Solution2 {
+    // 动态规划
+    public String longestPalindrome(String s) {
     }
 }
